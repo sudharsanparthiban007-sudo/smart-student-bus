@@ -1,10 +1,11 @@
 // ============================================================
-// middleware.ts — Next.js root middleware
+// proxy.ts — Next.js 16 root proxy (replaces middleware.ts)
+// Export must be named "proxy" in Next.js 16+
 // ============================================================
 import { type NextRequest } from 'next/server'
 import { updateSession } from '@/lib/supabase/middleware'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   return await updateSession(request)
 }
 
